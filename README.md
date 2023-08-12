@@ -7,8 +7,8 @@
 
 #### Wireframe: 
 
-![**Project 1 Wireframe**](images/wireframe.jpeg)
-![**Project 1 Wireframe**](images/models.jpeg)
+![**Project 2 Wireframe**](images/wireframe.jpeg)
+![**Project 2 Models*](images/models.jpeg)
 
 ## Built With
 -HTML
