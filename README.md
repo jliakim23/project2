@@ -1,5 +1,5 @@
 # Food Log Diary
-### Logging foods eaten to track your macros
+### Log meals eaten with its nutrition values
 
 ## About The Project
 -------------
@@ -7,7 +7,7 @@
 
 #### Wireframe: 
 
-![**Project 2 Wireframe**](images/wireframe.jpeg)
+![**Project 2 Wireframe**](images/wf.jpeg)
 ![**Project 2 Models*](images/models.jpeg)
 
 ## Built With
