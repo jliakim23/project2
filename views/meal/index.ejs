@@ -1,0 +1,22 @@
+
+    <body>
+   
+            <main>
+                <div>
+                    <a href="/new"><button>Create New Meal</button></a>
+                    <% for (meal of meals) { %>
+                        <article>
+                            <a href="/meal/<%= meal._id %>">
+                                <h2>
+                                <%= meal.caption %> 
+                                <%= meal.image %> 
+                                <!-- <%= meal.date %>  -->
+                                </h2>
+                           
+                            </a>
+                        </article>
+                        <% } %>
+                </div>
+
+            </main>
+    </body>
