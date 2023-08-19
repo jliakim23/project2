@@ -30,58 +30,38 @@ router.put("/:id", async (req, res) => {
 
 //Create
 router.post("/new", async (req, res) => {
-    await Meal.create(req.body)
+    await Meal.create(req.body);
+    let nutrition = await Nutrition.create(req.body);
      res.redirect("/meal");
   });
 
+
 //Edit
+
 router.get("/:id/edit", async (req, res) => {
     const id = req.params.id;
     const meal = await Meal.findById(id);
-  
-    res.render("meal/edit.ejs", {meal });
+    const nutrition = await Nutrition.findById(req.params.id)
+        .populate("meals")
+        .populate("userId");
+
+    res.render("meal/edit.ejs", {meal, nutrition });
   });
 
 
 //Show
 router.get("/:id", async (req, res) => {
     const id = req.params.id;
-    const meal = await Meal.findById(id);
-    // const nutrition = await Nutrition.findById(meal.nutritionid);
-    res.render("meal/show.ejs", { meal});
+    const meal = await Meal.findById(id).populate("nutrition");
+    res.render("meal/show.ejs", { meal, nutrition: meal.nutrition});
   });
 
-// router.get("/seed", async (req, res) => {
-// //   await Meal.deleteMany({});
-//   let seededMeals = await Meal.create([
-//     {
-//       name: "Bbq",
-//       description: "korean bbq",
-//       image:
-//         "https://simplyhomecooked.com/wp-content/uploads/2021/02/Starbucks-Caramel-Frappuccino-Copycat-recipe-11.jpg",
-//       date: ,
-
-//     },
-//     {
-//       name: "Pizza",
-//       description: "Pesto white pizza",
-//       image:
-//         "https://globalassets.starbucks.com/digitalassets/products/bev/SBX20190528_MochaFrapp.jpg?impolicy=1by1_wide_topcrop_630",
-//       date: ,
-
-//     },
-//     {
-//       name: "Stew",
-//       description: "Korean stew",
-//       image:
-//         "https://www.forkinthekitchen.com/wp-content/uploads/2022/06/220518.homemade.caramel.latte-6630.jpg",
-//       date: ,
-
-//     },
-//   ]);
-
-//   res.send(seededMeals);
-// });
+  router.post("/nutrition", async (req,res) => {
+     console.log(req.body)
+    let nutrition = await Nutrition.create(req.body);
+    
+    res.json(nutrition);
+    });
 
 
 module.exports = router;

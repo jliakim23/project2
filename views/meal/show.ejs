@@ -4,12 +4,15 @@
         <article>
             <h3>
                 <%= meal.image %>
-            </h3>
-            <h3>
-                 <%= meal.date %>
+                <%= meal.caption %>
             </h3>
        
-            </h3>
+                <h3>Calories: <%= meal.nutrition.calories %></h3>
+                <h3>Protein: <%= meal.nutrition.protein %></h3>
+                <h3>Carbs: <%= meal.nutrition.carbs %></h3>
+                <h3>Fats: <%= meal.nutrition.fats %></h3>
+         
+       
             <a href="/meal/<%= meal._id %>/edit"><button>Edit</button></a>
             <form action="/meal/<%= meal._id %>?_method=DELETE" method="POST">
                 <input type="submit" value="Delete" />

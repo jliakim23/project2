@@ -17,8 +17,6 @@ app.use(
 );
 app.use(methodOverride("_method"));
 
-
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -39,6 +37,7 @@ app.get("/", (req, res) => {
 // });
 
 app.use("/meal", mealRoutes);
+
 
 
 app.listen(PORT, () => console.log("listening to port:", PORT));
