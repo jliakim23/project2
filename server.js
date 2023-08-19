@@ -5,6 +5,7 @@ const expressLayouts = require("express-ejs-layouts");
 const authRoutes = require("./controllers/authController");
 const session = require("express-session");
 const mealRoutes = require("./controllers/mealController")
+const methodOverride = require("method-override");
 app.set("view engine", "ejs");
 
 // middlewares
@@ -14,6 +15,8 @@ app.use(
   // one hour login time
   session({ secret: "somestringreandomdwd", cookie: { maxAge: 3600000 } })
 );
+app.use(methodOverride("_method"));
+
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -35,8 +38,7 @@ app.get("/", (req, res) => {
 //   next();
 // });
 
-app.use(mealRoutes);
-
+app.use("/meal", mealRoutes);
 
 
 app.listen(PORT, () => console.log("listening to port:", PORT));

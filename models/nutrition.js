@@ -5,7 +5,8 @@ const { Schema } = mongoose;
 
 
 const nutritionSchema = new Schema({
-    meals: [mealSchema],
+    userId: { ref: "User", type: mongoose.Schema.Types.ObjectId },
+    meals: [{ ref: "Meal", type: mongoose.Schema.Types.ObjectId }],
     calories: Number,
     protein: Number,
     carbs: Number,

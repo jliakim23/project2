@@ -1,0 +1,19 @@
+<main>
+    <div>
+        <form action="/meal/<%= meal._id %>?_method=PUT" method="post">
+            <fieldset>
+                <legend>Edit: <%= meal.caption %>
+                </legend>
+                <label>
+                    Date: <input type="text" name="date" value="<%= meal.date %>"
+                        placeholder="enter date" />
+                </label>
+                <label>
+                    Caption: <input type="text" name="caption" value="<%= meal.caption %>"
+                        placeholder="enter caption" />
+                </label>
+            </fieldset>
+            <input type="submit" value="Update <%= meal._id %>" />
+        </form>
+    </div>
+</main>

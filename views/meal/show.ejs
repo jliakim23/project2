@@ -1,0 +1,21 @@
+<main>
+    <div>
+
+        <article>
+            <h3>
+                <%= meal.image %>
+            </h3>
+            <h3>
+                 <%= meal.date %>
+            </h3>
+       
+            </h3>
+            <a href="/meal/<%= meal._id %>/edit"><button>Edit</button></a>
+            <form action="/meal/<%= meal._id %>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete" />
+            </form>
+            <a href="/meal/"><button>Back to Index</button></a>
+        </article>
+
+    </div>
+</main>
