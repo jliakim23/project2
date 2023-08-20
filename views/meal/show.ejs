@@ -1,19 +1,17 @@
 <main>
     <div>
         <article>
-          
-                <%= meal.image %>
-         
+            <img src="<%= meal.image %>" alt="Meal Image">
             <h3>Caption: <%= meal.caption %></h3>
             <h3>Date: <%= meal.date %></h3>
             
            
             <h3>Nutrition Details:</h3>
             <ul>
-                <li>Calories: <%= meal.nutrition.calories %></li>
-                <li>Protein: <%= meal.nutrition.protein %></li>
-                <li>Carbs: <%= meal.nutrition.carbs %></li>
-                <li>Fats: <%= meal.nutrition.fats %></li>
+                <li>Calories: <%= meal.calories %></li>
+                <li>Protein: <%= meal.protein %></li>
+                <li>Carbs: <%= meal.carbs %></li>
+                <li>Fats: <%= meal.fats %></li>
             </ul>
 
             <a href="/meal/<%= meal._id %>/edit"><button>Edit</button></a>

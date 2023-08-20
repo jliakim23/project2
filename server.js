@@ -3,8 +3,9 @@ const app = express();
 const PORT = 4000;
 const expressLayouts = require("express-ejs-layouts");
 const authRoutes = require("./controllers/authController");
-const session = require("express-session");
+// const nutritionRoutes = require("./controllers/nutritionController");
 const mealRoutes = require("./controllers/mealController")
+const session = require("express-session");
 const methodOverride = require("method-override");
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -40,6 +41,7 @@ app.get("/", (req, res) => {
 // });
 
 app.use("/meal", mealRoutes);
+// app.use("/nutrition", nutritionRoutes);
 
 
 

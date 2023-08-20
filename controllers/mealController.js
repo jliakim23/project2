@@ -5,7 +5,7 @@ const Nutrition = require("../models/nutrition");
 
 //Index
 router.get("/", async (req, res) => {
-    let meals = await Meal.find().populate("nutrition");
+    let meals = await Meal.find()
     res.render("meal/index.ejs", { meals });
   });
 
@@ -31,7 +31,6 @@ router.put("/:id", async (req, res) => {
 //Create
 router.post("/", async (req, res) => {
     const meal = await Meal.create(req.body);
-    const nutrition = await Nutrition.create(req.body);
      res.redirect("/meal");
   });
 // router.post("/", async (req, res) => {
@@ -60,8 +59,8 @@ router.get("/:id/edit", async (req, res) => {
 //Show
 router.get("/:id", async (req, res) => {
     const id = req.params.id;
-    const meal = await Meal.findById(id).populate("nutrition");
-    res.render("meal/show.ejs", { meal, nutrition: meal.nutrition});
+    const meal = await Meal.findById(id);
+    res.render("meal/show.ejs", { meal});
   });
 
   // router.post("/nutrition", async (req,res) => {
@@ -71,24 +70,24 @@ router.get("/:id", async (req, res) => {
   //   res.json(nutrition);
   //   });
 
-    router.get("/nutrition/:id", async (req, res) => {
-      const nutrition = await Nutrition.findById(req.params.id)
-        .populate("meal")
-        .populate("userId")
-        .populate("nutrition");
+    // router.get("/nutrition/:id", async (req, res) => {
+    //   const nutrition = await Nutrition.findById(req.params.id)
+    //     .populate("meal")
+    //     .populate("userId")
+    //     .populate("nutrition");
     
-      // res.json(nutrition);
-      res.render("nutrition/show.ejs", { nutrition });
-    });
+    //   // res.json(nutrition);
+    //   res.render("nutrition/show.ejs", { nutrition });
+    // });
 
-    router.get("/nutrition", async (req, res) => {
-      const nutritions = await Nutrition.find({ userId: req.session.userId })
-        .populate("meal")
-        .populate("userId")
-        .populate("nutrition");
+    // router.get("/nutrition", async (req, res) => {
+    //   const nutritions = await Nutrition.find({ userId: req.session.userId })
+    //     .populate("meal")
+    //     .populate("userId")
+    //     .populate("nutrition");
     
-      console.log(nutritions);
-      res.render("nutrition/index.ejs", { nutritions });
-    });
+    //   console.log(nutritions);
+    //   res.render("nutrition/index.ejs", { nutritions });
+    // });
 
 module.exports = router;

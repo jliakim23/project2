@@ -18,19 +18,19 @@
                 </label>
 
                 <label>
-                    Calories: <input type="text" name="calories" value="<%= meal.nutrition.calories %>"
+                    Calories: <input type="text" name="calories" value="<%= meal.calories %>"
                     placeholder="enter calories" />
                 </label>
                 <label>
-                    Protein: <input type="text" name="protein" value="<%= meal.nutrition ? meal.nutrition.protein : '' %>"
+                    Protein: <input type="text" name="protein" value="<%= meal ? meal.protein : '' %>"
                     placeholder="enter protein" />
                 </label>
                 <label>
-                    Carbs: <input type="text" name="carbs" value="<%= meal.nutrition.carbs %>"
+                    Carbs: <input type="text" name="carbs" value="<%= meal.carbs %>"
                     placeholder="enter carbs" />
                 </label>
                 <label>
-                    Fats: <input type="text" name="fats" value="<%= meal.nutrition ? meal.nutrition.fats : '' %>"
+                    Fats: <input type="text" name="fats" value="<%= meal ? meal.fats : '' %>"
                     placeholder="enter fats" />
                 </label>
             </fieldset>

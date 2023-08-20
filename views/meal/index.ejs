@@ -7,10 +7,15 @@
                     <% for (meal of meals) { %>
                         <article>
                             <a href="/meal/<%= meal._id %>">
+                                <% if (meal.image) { %>
+                                    <img src="<%= meal.image %>" alt="Meal Image">
+                                <% } else { %>
+                                    <p>No image available</p>
+                                <% } %>
+                        
                                 <h2>
                                 <%= meal.caption %> 
-                                <%= meal.image %> 
-                               
+                                
                                 </h2>
                            
                             </a>
