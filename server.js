@@ -9,7 +9,7 @@ const session = require("express-session");
 const methodOverride = require("method-override");
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const multer = require("multer");
+// const multer = require("multer");
 const MemoryStore = require('memorystore')(session)
 app.set("view engine", "ejs");
 
