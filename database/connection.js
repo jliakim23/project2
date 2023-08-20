@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-
+require("dotenv").config()
 mongoose.connect(
-  "mongodb+srv://jliakim23:wSKpKPSGBsdfX8aU@sei.fpisaib.mongodb.net/FoodLog"
+  process.env.DATABASE_URL
 );
 
 
