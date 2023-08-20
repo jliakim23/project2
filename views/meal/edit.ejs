@@ -13,23 +13,28 @@
                         placeholder="enter caption" />
                 </label>
                 <label>
-                    Calories: <input type="text" name="calories" value="<%= meal.calories %>"
-                        placeholder="enter calories" />
+                   Image: <input type="text" name="image" value="<%= meal.image %>"
+                        placeholder="enter img" />
+                </label>
+
+                <label>
+                    Calories: <input type="text" name="calories" value="<%= meal.nutrition.calories %>"
+                    placeholder="enter calories" />
                 </label>
                 <label>
-                    Protein: <input type="text" name="protein" value="<%= meal.protein %>"
-                        placeholder="enter calories" />
+                    Protein: <input type="text" name="protein" value="<%= meal.nutrition ? meal.nutrition.protein : '' %>"
+                    placeholder="enter protein" />
                 </label>
                 <label>
-                    Carbs: <input type="text" name="carbs" value="<%= meal.carbs %>"
-                        placeholder="enter carbs" />
+                    Carbs: <input type="text" name="carbs" value="<%= meal.nutrition.carbs %>"
+                    placeholder="enter carbs" />
                 </label>
                 <label>
-                    Fats: <input type="text" name="fats" value="<%= meal.calories %>"
-                        placeholder="enter fats" />
+                    Fats: <input type="text" name="fats" value="<%= meal.nutrition ? meal.nutrition.fats : '' %>"
+                    placeholder="enter fats" />
                 </label>
             </fieldset>
-            <input type="submit" value="Update" />
+            <input type="submit" value="Update <%= meal.caption %>" />
         </form>
     </div>
 </main>

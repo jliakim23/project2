@@ -6,6 +6,8 @@ const authRoutes = require("./controllers/authController");
 const session = require("express-session");
 const mealRoutes = require("./controllers/mealController")
 const methodOverride = require("method-override");
+const cors = require('cors');
+const bodyParser = require('body-parser');
 app.set("view engine", "ejs");
 
 // middlewares
@@ -17,9 +19,10 @@ app.use(
 );
 app.use(methodOverride("_method"));
 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(cors());
 
 app.use(authRoutes);
 

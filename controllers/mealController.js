@@ -5,7 +5,7 @@ const Nutrition = require("../models/nutrition");
 
 //Index
 router.get("/", async (req, res) => {
-    let meals = await Meal.find();
+    let meals = await Meal.find().populate("nutrition");
     res.render("meal/index.ejs", { meals });
   });
 
@@ -25,27 +25,35 @@ router.delete("/:id", async (req, res) => {
 router.put("/:id", async (req, res) => {
     const id = req.params.id;
     await Meal.findByIdAndUpdate(id, req.body, { new: true });
-    res.redirect("/meal");
+    res.redirect(`/meal/${id}`);
   });
 
 //Create
-router.post("/new", async (req, res) => {
-    await Meal.create(req.body);
-    let nutrition = await Nutrition.create(req.body);
+router.post("/", async (req, res) => {
+    const meal = await Meal.create(req.body);
+    const nutrition = await Nutrition.create(req.body);
      res.redirect("/meal");
   });
-
+// router.post("/", async (req, res) => {
+//   try {  
+//       const meal = await Meal.create(req.body);
+//       const nutrition = await Nutrition.create(req.body);
+//       meal.nutrition.push(nutrition._id);
+//       await meal.save();
+//       res.redirect("/meal");
+//   } catch (error) {
+//       console.error(error);
+//       res.status(500).send("Error creating meal and nutrition");
+//   }
+// });
 
 //Edit
 
 router.get("/:id/edit", async (req, res) => {
     const id = req.params.id;
     const meal = await Meal.findById(id);
-    const nutrition = await Nutrition.findById(req.params.id)
-        .populate("meals")
-        .populate("userId");
 
-    res.render("meal/edit.ejs", {meal, nutrition });
+    res.render("meal/edit.ejs", {meal });
   });
 
 
@@ -56,12 +64,31 @@ router.get("/:id", async (req, res) => {
     res.render("meal/show.ejs", { meal, nutrition: meal.nutrition});
   });
 
-  router.post("/nutrition", async (req,res) => {
-     console.log(req.body)
-    let nutrition = await Nutrition.create(req.body);
+  // router.post("/nutrition", async (req,res) => {
+  //    console.log(req.body)
+  //   let nutrition = await Nutrition.create(req.body);
     
-    res.json(nutrition);
+  //   res.json(nutrition);
+  //   });
+
+    router.get("/nutrition/:id", async (req, res) => {
+      const nutrition = await Nutrition.findById(req.params.id)
+        .populate("meal")
+        .populate("userId")
+        .populate("nutrition");
+    
+      // res.json(nutrition);
+      res.render("nutrition/show.ejs", { nutrition });
     });
 
+    router.get("/nutrition", async (req, res) => {
+      const nutritions = await Nutrition.find({ userId: req.session.userId })
+        .populate("meal")
+        .populate("userId")
+        .populate("nutrition");
+    
+      console.log(nutritions);
+      res.render("nutrition/index.ejs", { nutritions });
+    });
 
 module.exports = router;

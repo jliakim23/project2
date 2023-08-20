@@ -1,11 +1,12 @@
 const mongoose = require('../database/connection');
-const { mealSchema } = require('./meal');
-const { userSchema } = require('./user');
+// const { mealSchema } = require('./meal');
+// const { userSchema } = require('./user');
 const { Schema } = mongoose; 
 
 
 const nutritionSchema = new mongoose.Schema({
-    meals: [{ ref: "Meal", type: mongoose.Schema.Types.ObjectId }],
+    userId: { ref: "User", type: mongoose.Schema.Types.ObjectId }, 
+    mealId: [{ ref: "Meal", type: mongoose.Schema.Types.ObjectId }],
     calories: Number,
     protein: Number,
     carbs: Number,
