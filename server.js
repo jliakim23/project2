@@ -9,6 +9,7 @@ const session = require("express-session");
 const methodOverride = require("method-override");
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const multer = require("multer");
 app.set("view engine", "ejs");
 
 // middlewares
