@@ -23,7 +23,6 @@ hr {
     margin-bottom: 25px;
 }
 
-
 #nav {
     display: flex;
     justify-content: space-evenly;
@@ -66,7 +65,6 @@ hr {
     color: #333;
 }
 
-
 #tabs a:hover span {
     color: #591333;
 }
@@ -79,13 +77,10 @@ hr {
     background-position: 100% -42px;
 }
 
-
-
-
-body {
+/* body {
     margin: 0;
     font-family: Arial, sans-serif;
-}
+} */
 
 .landing-hero {
     flex-direction: row;
@@ -104,6 +99,7 @@ body {
 }
 
 .btn-pink {
+    font: bold 15px/1.5em Verdana;
     background-color: #E276A7;
     color: #251a1a;
     border: none;
@@ -120,7 +116,30 @@ body {
     background-color: #ebc6d7;
 }
 
-
 .landing-hero a .btn-pink {
     margin-top: 15px; 
+}
+
+.pictures {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+.pink-link {
+    color: #E276A7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.pink-link:hover {
+    color: #ebc6d7;
+}
+
+.create-button {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    z-index: 999; 
+
 }

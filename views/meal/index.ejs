@@ -2,11 +2,11 @@
     <body>
    
             <main>
-                <div>
-                    <a href="/meal/new"><button class="btn-pink">Create New Meal</button></a>
+                <div class= "pictures" >
+                    <a href="/meal/new"><button class="btn-pink create-button">Create New Meal</button></a>
                     <% for (meal of meals) { %>
                         <article>
-                            <a href="/meal/<%= meal._id %>">
+                            <a href="/meal/<%= meal._id %>" class="pink-link">
                                 <% if (meal.image) { %>
                                     <img src="<%= meal.image %>" alt="Meal Image">
                                 <% } else { %>
