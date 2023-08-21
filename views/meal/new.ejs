@@ -1,9 +1,11 @@
-<h1>New Meals</h1>
+
 <main>
-    <div>
-        <form action="/meal" method="post">
+    <div class="details-container">
+        <h2>Create Meal</h2>
+        <form action="/meal" method="post" class="new-form">
             <fieldset>
-                <legend>Create Meal</legend>
+                <ul class="form-list">
+                
                 <label>
                    Caption:<input type="text" name="caption" placeholder="enter caption" />
                 </label>
@@ -34,7 +36,7 @@
                     Fats:<input type="text" name="fats"
                         placeholder="enter fats" />
                 </label>
-            
+            </ul>
             </fieldset>
             <input type="submit" value="submit" class="btn-pink" />
         </form>

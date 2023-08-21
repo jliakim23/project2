@@ -1,9 +1,10 @@
 <main>
-    <div>
-        <form action="/meal/<%= meal._id %>?_method=PUT" method="post">
+    <div class="details-container"> 
+        <h2> <%= meal.caption %> </h2>
+        <form action="/meal/<%= meal._id %>?_method=PUT" method="post" class="edit-form">
             <fieldset>
                 <ul class="form-list">
-                <legend> <%= meal.caption %>
+               
                 </legend>
                 <label>
                     Date: <input type="text" name="date" value="<%= meal.date %>"

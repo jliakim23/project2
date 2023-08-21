@@ -6,6 +6,7 @@ img {
  /* for nav bar*/
 body {
     font: bold 15px/1.5em Verdana;
+ 
 }
 
 h1 {
@@ -77,18 +78,17 @@ hr {
     background-position: 100% -42px;
 }
 
-/* body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-} */
+
 
 .landing-hero {
+
     flex-direction: row;
     align-items: center;
     justify-content: center;
     height: 100vh;
     background-color: #f5f5f5;
     text-align: center;
+
 }
 
 .landing-hero h1 {
@@ -104,8 +104,8 @@ hr {
     color: #251a1a;
     border: none;
     border-radius: 4px;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 8px 10px;
+    font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-decoration: none;
@@ -122,14 +122,30 @@ hr {
 
 .pictures {
         width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        display: flex;
+        margin: 10px; /* Add spacing between images */
+        border: 2px solid #ccc; /* Add a 2px solid border with a gray color */
+        border-radius: 4px; 
+    }
+
+    .top-row, .bottom-row {
         display: flex;
         justify-content: space-evenly;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    .top-row {
+        margin-bottom: 20px;
     }
 
 .pink-link {
     color: #E276A7;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: 10px;
 }
 
 .pink-link:hover {
@@ -142,4 +158,89 @@ hr {
     right: 20px;
     z-index: 999; 
 
+}
+
+.meal-image {
+    width: 300px; 
+    height: 250px; 
+    object-fit: cover; 
+
+}
+
+h2 {
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.details {
+    width: 300px;
+    object-fit: cover; 
+    
+}
+
+.edit-form
+.new-form {
+    max-width: 500px; 
+    margin: 0 auto; 
+    padding: 50px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    justify-content: center;
+
+}
+
+.form-list {
+    list-style: none;
+    padding: 0;
+}
+
+.form-list li {
+    margin-bottom: 20px;
+}
+
+.form-list label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-list input[type="text"] {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.details-container
+ {
+    max-width: 500px; 
+    margin: 0 auto; 
+    padding: 50px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    justify-content: center;
+
+}
+.details-article {
+    width: 80%;
+    padding: 8px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    justify-content: center;
+}
+
+.details h3 {
+    margin-top: 20px;
+}
+
+.details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.details ul li {
+    margin-bottom: 5px;
+}
+.form-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }

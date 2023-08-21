@@ -1,24 +1,29 @@
-<main>
-    <div>
-        <article>
-            <img src="<%= meal.image %>" alt="Meal Image">
-            <h3>Caption: <%= meal.caption %></h3>
-            <h3>Date: <%= meal.date %></h3>
-            
-           
-            <h3>Nutrition Details:</h3>
-            <ul>
-                <li>Calories: <%= meal.calories %></li>
-                <li>Protein: <%= meal.protein %></li>
-                <li>Carbs: <%= meal.carbs %></li>
-                <li>Fats: <%= meal.fats %></li>
-            </ul>
 
-            <a href="/meal/<%= meal._id %>/edit"><button class="btn-pink">Edit</button></a>
-            <form action="/meal/<%= meal._id %>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete" class="btn-pink" />
-            </form>
-            <a href="/meal/"><button class="btn-pink">Back to Index</button></a>
+<main>
+
+    <div class="details-container">
+            <article class="details-article">
+            <h3>Caption: <%= meal.caption %></h3>
+            <img src="<%= meal.image %>" alt="Meal Image" class="meal-image">
+            <div class="details">
+               
+                <h3>Date:  <%= meal.date.toLocaleDateString() %></h3>
+                <h3>Nutrition Details:</h3>
+                <ul>
+                    <li>Calories: <%= meal.calories %> g</li>
+                    <li>Protein: <%= meal.protein %> g</li>
+                    <li>Carbs: <%= meal.carbs %> g</li>
+                    <li>Fats: <%= meal.fats %> g</li>
+                </ul>
+            </div>
+         
+        <div class="form-container">
+                <a href="/meal/<%= meal._id %>/edit" class="btn-pink">Edit</a>
+                <form action="/meal/<%= meal._id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete" class="btn-pink" />
+                </form>
+       
+     </div>
         </article>
     </div>
 </main>

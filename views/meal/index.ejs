@@ -4,21 +4,31 @@
             <main>
                 <div class= "pictures" >
                     <a href="/meal/new"><button class="btn-pink create-button">Create New Meal</button></a>
-                    <% for (meal of meals) { %>
-                        <article>
-                            <a href="/meal/<%= meal._id %>" class="pink-link">
-                                <% if (meal.image) { %>
-                                    <img src="<%= meal.image %>" alt="Meal Image">
-                                <% } else { %>
-                                    <p>No image available</p>
-                                <% } %>
-                        
-                                <h2>
-                                <%= meal.caption %> 
-                                
-                                </h2>
-                           
-                            </a>
+                    <div class="top-row">
+                        <% for (let i = 0; i < Math.min(4, meals.length); i++) { %>
+                            <article>
+                                <a href="/meal/<%= meals[i]._id %>" class="pink-link">
+                                    <% if (meals[i].image) { %>
+                                        <img src="<%= meals[i].image %>" alt="Meal Image" class="meal-image">
+                                    <% } else { %>
+                                        <p>No image available</p>
+                                    <% } %>
+                                    <h2><%= meals[i].caption %></h2>
+                                </a>
+                            </article>
+                        <% } %>
+                    </div>
+                    <div class="bottom-row">
+                        <% for (let i = 4; i < meals.length; i++) { %>
+                            <article>
+                                <a href="/meal/<%= meals[i]._id %>" class="pink-link">
+                                    <% if (meals[i].image) { %>
+                                        <img src="<%= meals[i].image %>" alt="Meal Image" class="meal-image">
+                                    <% } else { %>
+                                        <p>No image available</p>
+                                    <% } %>
+                                    <h2><%= meals[i].caption %></h2>
+                                </a>
                         </article>
                         <% } %>
                 </div>
