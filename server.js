@@ -36,7 +36,7 @@ app.get("/", (req, res) => {
 // });
 
 app.use("/meal", mealRoutes);
-// app.use("/nutrition", nutritionRoutes);
+
 
 
 

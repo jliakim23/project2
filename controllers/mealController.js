@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Meal = require("../models/meal");
-const Nutrition = require("../models/nutrition");
+
 
 //Index
 router.get("/", async (req, res) => {
