@@ -2,7 +2,8 @@
     <div>
         <form action="/meal/<%= meal._id %>?_method=PUT" method="post">
             <fieldset>
-                <legend>Edit: <%= meal.caption %>
+                <ul class="form-list">
+                <legend> <%= meal.caption %>
                 </legend>
                 <label>
                     Date: <input type="text" name="date" value="<%= meal.date %>"
@@ -33,8 +34,9 @@
                     Fats: <input type="text" name="fats" value="<%= meal ? meal.fats : '' %>"
                     placeholder="enter fats" />
                 </label>
+            </ul>
             </fieldset>
-            <input type="submit" value="Update <%= meal.caption %>" />
+            <input type="submit" value="Update <%= meal.caption %>" class="btn-pink"/>
         </form>
     </div>
 </main>

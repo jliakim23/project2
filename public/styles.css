@@ -1,4 +1,126 @@
 img {
-    width: 300px; 
-    height: auto; 
+    width: 200px;
+    height: auto;
   }
+
+ /* for nav bar*/
+body {
+    font: bold 15px/1.5em Verdana;
+}
+
+h1 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #CCCCCC;
+    height: 1px;
+    margin-bottom: 25px;
+}
+
+
+#nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#tabs {
+    float: left;
+    width: 100%;
+    background: #FCF1F6;
+    font-size: 93%;
+    line-height: normal;
+    border-bottom: 1px solid #E276A7;
+}
+
+#tabs ul {
+    margin: 0;
+    padding: 10px 10px 0 50px;
+    list-style: none;
+}
+
+#tabs li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+#tabs a {
+    float: left;
+    background: url("tableft.gif") no-repeat left top;
+    margin: 0;
+    padding: 0 0 0 4px;
+    text-decoration: none;
+}
+
+#tabs a span {
+    float: left;
+    display: block;
+    background: url("tabright.gif") no-repeat right top;
+    padding: 5px 15px 4px 6px;
+    color: #333;
+}
+
+
+#tabs a:hover span {
+    color: #591333;
+}
+
+#tabs a:hover {
+    background-position: 0% -42px;
+}
+
+#tabs a:hover span {
+    background-position: 100% -42px;
+}
+
+
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.landing-hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.landing-hero h1 {
+    display: block;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.btn-pink {
+    background-color: #E276A7;
+    color: #251a1a;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    margin-top: 15px; 
+}
+
+.btn-pink:hover {
+    background-color: #ebc6d7;
+}
+
+
+.landing-hero a .btn-pink {
+    margin-top: 15px; 
+}

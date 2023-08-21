@@ -14,11 +14,11 @@
                 <li>Fats: <%= meal.fats %></li>
             </ul>
 
-            <a href="/meal/<%= meal._id %>/edit"><button>Edit</button></a>
+            <a href="/meal/<%= meal._id %>/edit"><button class="btn-pink">Edit</button></a>
             <form action="/meal/<%= meal._id %>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete" />
+                <input type="submit" value="Delete" class="btn-pink" />
             </form>
-            <a href="/meal/"><button>Back to Index</button></a>
+            <a href="/meal/"><button class="btn-pink">Back to Index</button></a>
         </article>
     </div>
 </main>
