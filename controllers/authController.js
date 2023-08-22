@@ -33,7 +33,7 @@ router.post("/signup", async (req, res) => {
       req.body.password = hashedPassword;
       let newUser = await User.create(req.body);
 
-      res.send(newUser);
+      res.redirect("/meal");
     });
   }
 });

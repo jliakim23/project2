@@ -13,7 +13,7 @@ app.use(express.static("public"));
 app.use(expressLayouts);
 app.use(
   // one hour login time
-  session({ secret: "somestringreandomdwd", cookie: { maxAge: 3600000 } })
+  session({ secret: "somestring", cookie: { maxAge: 3600000 } })
 );
 app.use(methodOverride("_method"));
 
@@ -26,14 +26,14 @@ app.get("/", (req, res) => {
 });
 
 
-// app.use((req, res, next) => {
-//   if (!req.session.userId) {
-//     res.redirect("/login");
-//     return;
-//   }
+app.use((req, res, next) => {
+  if (!req.session.userId) {
+    res.redirect("/login");
+    return;
+  }
 
-//   next();
-// });
+  next();
+});
 
 app.use("/meal", mealRoutes);
 
