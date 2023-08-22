@@ -6,6 +6,7 @@ img {
  /* for nav bar*/
 body {
     font: bold 15px/1.5em Verdana;
+    
  
 }
 
@@ -78,17 +79,26 @@ hr {
     background-position: 100% -42px;
 }
 
+.main-container{
+    background-color: rgba(255, 255, 255, 0.7); 
+    padding: 20px; 
+    border-radius: 10px;
+}
 
-
-.landing-hero {
-    flex-direction: columnn;
+.signup-form,
+.landing-hero,
+.login-form {
+    flex-direction: column; 
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f5f5f5;
+    padding: 100px; 
     text-align: center;
     padding: 100px;
-
+    background-image: url("../20294906.jpg"); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-color: rgba(255, 255, 255, 0.7)
 }
 
 .landing-hero h1 {
@@ -96,6 +106,7 @@ hr {
     font-size: 28px;
     margin-bottom: 20px;
     color: #333;
+    
 }
 
 .btn-pink {
@@ -178,7 +189,7 @@ h2 {
     
 }
 
-.edit-form
+.edit-form,
 .new-form {
     max-width: 500px; 
     margin: 0 auto; 
@@ -217,6 +228,7 @@ h2 {
     padding: 50px; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     justify-content: center;
+    
 
 }
 .details-article {
@@ -243,4 +255,9 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+.background{
+    background-image: url("../World_Food_Day_Wallpaper_Background.jpeg"); 
+    background-size: cover;
+    background-repeat: repeat; 
 }
